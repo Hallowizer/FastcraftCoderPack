@@ -1,0 +1,27 @@
+# CL: obf deobf
+CL: b fastcraft/DummyMain
+CL: Tweaker fastcraft/FastcraftTweaker
+CL: L fastcraft/Launcher
+CL: aG fastcraft/FastcraftUtil
+CL: J fastcraft/FastcraftTransformer
+CL: a fastcraft/Fastcraft
+CL: ay fastcraft/FastcraftConfig
+
+# FD: obf desc deobf
+FD: fastcraft/FastcraftTweaker/a Z run
+FD: fastcraft/Launcher/a Z run
+FD: fastcraft/FastcraftTransformer/c Z dump
+FD: fastcraft/FastcraftTransformer/b Z verify
+FD: fastcraft/FastcraftTransformer/d Z permissive
+FD: fastcraft/Fastcraft/a Lorg/apache/logging/log4j/Logger; log
+FD: fastcraft/FastcraftConfig/a Ljava/lang/String; name
+FD: fastcraft/Fastcraft/a Z initialized
+
+# MD: obfnameanddesc deobf
+MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object; readField
+MD: fastcraft/Fastcraft/a()Lorg/apache/logging/log4j/Logger; getLogger
+MD: fastcraft/Fastcraft/b()V init
+MD: fastcraft/Fastcraft/b()Lfastcraft/FastcraftConfig; loadConfig
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/File;)V saveConfig
+MD: fastcraft/Fastcraft/a()V assertInitialized
