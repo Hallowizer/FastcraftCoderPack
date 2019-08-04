@@ -6,6 +6,8 @@ CL: aG fastcraft/FastcraftUtil
 CL: J fastcraft/FastcraftTransformer
 CL: a fastcraft/Fastcraft
 CL: ay fastcraft/FastcraftConfig
+CL: aJ fastcraft/FastcraftHashMap
+CL: aO fastcraft/FastcraftMapSet
 
 # FD: obf desc deobf
 FD: fastcraft/FastcraftTweaker/a Z run
@@ -16,6 +18,10 @@ FD: fastcraft/FastcraftTransformer/d Z permissive
 FD: fastcraft/Fastcraft/a Lorg/apache/logging/log4j/Logger; log
 FD: fastcraft/FastcraftConfig/a Ljava/lang/String; name
 FD: fastcraft/Fastcraft/a Z initialized
+FD: fastcraft/FastcraftHashMap/a [Ljava/lang/Object; values
+FD: fastcraft/FastcraftHashMap/b [Ljava/lang/Object; keys
+FD: fastcraft/FastcraftUtil/a Ljava/lang/Object; uninitializedMarker
+FD: fastcraft/FastcraftMapSet Lfastcraft/FastcraftHashMap; map
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -25,3 +31,10 @@ MD: fastcraft/Fastcraft/b()V init
 MD: fastcraft/Fastcraft/b()Lfastcraft/FastcraftConfig; loadConfig
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/File;)V saveConfig
 MD: fastcraft/Fastcraft/a()V assertInitialized
+MD: fastcraft/Fastcraft/a(Ljava/lang/Runnable;)Ljava/util/concurrent/Future; submitTask
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/Object;)Ljava/lang/Object; clearObject
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/Object;)I hash
+MD: fastcraft/FastcraftUtil/a(II)I ceilDiv
+MD: fastcraft/FastcraftUtil/d(I)I maxValueInSpace
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftHashMap;Ljava/lang/Object;)I getMapIndex
+MD: fastcraft/FastcraftUtil/a()Ljava/lang/Object; getUninitializedMarker
