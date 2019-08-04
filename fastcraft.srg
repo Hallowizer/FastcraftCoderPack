@@ -12,6 +12,8 @@ CL: aM fastcraft/collect/FastcraftEntrySet
 CL: aL fastcraft/collect/EntrySetIterator
 CL: aN fastcraft/collect/KeySetIterator
 CL: aK fastcraft/collect/IteratorBase
+CL: aZ fastcraft/collect/MapContainer
+CL: B fastcraft/TransformerUtil
 
 # FD: obf desc deobf
 FD: fastcraft/FastcraftTweaker/a Z run
@@ -54,3 +56,10 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/IteratorBase;)V moveIteratorMar
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/IteratorBase;)V nextElement
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FastcraftHashMap;I)V remove
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FastcraftHashMap;I)V alsoRemove
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/File;[B)V write
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;[B) saveTransformedClass
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/String;)[B toBytes
+MD: fastcraft/FastcraftUtil/a([B[B)[B digest
+MD: fastcraft/FastcraftUtil/a([B)Ljava/lang/String; toString
+MD: fastcraft/FastcraftUtil/a([BI[BII)V smallRemaindersBy85
+MD: fastcraft/FastcraftUtil/a([B)[B remaindersBy85
