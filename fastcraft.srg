@@ -7,7 +7,11 @@ CL: J fastcraft/FastcraftTransformer
 CL: a fastcraft/Fastcraft
 CL: ay fastcraft/FastcraftConfig
 CL: aJ fastcraft/FastcraftHashMap
-CL: aO fastcraft/FastcraftMapSet
+CL: aO fastcraft/FastcraftKeySet
+CL: aM fastcraft/FastcraftEntrySet
+CL: aL fastcraft/EntrySetIterator
+CL: aN fastcraft/KeySetIterator
+CL: aK fastcraft/IteratorBase
 
 # FD: obf desc deobf
 FD: fastcraft/FastcraftTweaker/a Z run
@@ -21,7 +25,11 @@ FD: fastcraft/Fastcraft/a Z initialized
 FD: fastcraft/FastcraftHashMap/a [Ljava/lang/Object; values
 FD: fastcraft/FastcraftHashMap/b [Ljava/lang/Object; keys
 FD: fastcraft/FastcraftUtil/a Ljava/lang/Object; uninitializedMarker
-FD: fastcraft/FastcraftMapSet Lfastcraft/FastcraftHashMap; map
+FD: fastcraft/FastcraftKeySet/a Lfastcraft/FastcraftHashMap; map
+FD: fastcraft/FastcraftHashMap/a I size
+FD: fastcraft/FastcraftEntrySet/a Lfastcraft/FastcraftHashMap; map
+FD: fastcraft/EntrySetIterator/b Lfastcraft/FastcraftHashMap; map
+FD: fastcraft/IteratorBase/a Lfastcraft/FastcraftHashMap; map
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -38,3 +46,6 @@ MD: fastcraft/FastcraftUtil/a(II)I ceilDiv
 MD: fastcraft/FastcraftUtil/d(I)I maxValueInSpace
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftHashMap;Ljava/lang/Object;)I getMapIndex
 MD: fastcraft/FastcraftUtil/a()Ljava/lang/Object; getUninitializedMarker
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/KeySetIterator;)Ljava/lang/Object; nextKey
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/EntrySetIterator;)Ljava/util/Entry; nextEntry
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/IteratorBase;)V moveIteratorMarker
