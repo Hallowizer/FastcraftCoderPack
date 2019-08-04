@@ -30,6 +30,8 @@ FD: fastcraft/FastcraftHashMap/a I size
 FD: fastcraft/FastcraftEntrySet/a Lfastcraft/FastcraftHashMap; map
 FD: fastcraft/EntrySetIterator/b Lfastcraft/FastcraftHashMap; map
 FD: fastcraft/IteratorBase/a Lfastcraft/FastcraftHashMap; map
+FD: fastcraft/IteratorBase/a I pos
+FD: fastcraft/IteratorBase/b I removePos
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -49,3 +51,6 @@ MD: fastcraft/FastcraftUtil/a()Ljava/lang/Object; getUninitializedMarker
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/KeySetIterator;)Ljava/lang/Object; nextKey
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/EntrySetIterator;)Ljava/util/Entry; nextEntry
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/IteratorBase;)V moveIteratorMarker
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/IteratorBase;)V nextElement
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/FastcraftHashMap;I)V remove
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftHashMap;I)V alsoRemove
