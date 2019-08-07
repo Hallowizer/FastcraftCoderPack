@@ -93,3 +93,4 @@ MD: fastcraft/asm/TransformerUtil/f(Ljava/lang/String;)Ljava/lang/String; transf
 MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Ljava/lang/String; base85
 MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
 MD: fastcraft/asm/TransformerUtil/a(II)Z absValuesEqual
+MD: fastcraft/asm/ITransformer/a()V reset
