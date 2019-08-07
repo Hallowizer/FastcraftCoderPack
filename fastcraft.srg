@@ -14,6 +14,10 @@ CL: aN fastcraft/collect/KeySetIterator
 CL: aK fastcraft/collect/IteratorBase
 CL: aZ fastcraft/collect/MapContainer
 CL: B fastcraft/TransformerUtil
+CL: r fastcraft/Constants
+CL: bb fastcraft/collect/MultimapIterator
+CL: ba fastcraft/collect/MultimapEntrySet
+CL: i fastcraft/ITransformer
 
 # FD: obf desc deobf
 FD: fastcraft/FastcraftTweaker/a Z run
@@ -34,6 +38,11 @@ FD: fastcraft/collect/EntrySetIterator/b Lfastcraft/collect/FastcraftHashMap; ma
 FD: fastcraft/collect/IteratorBase/a Lfastcraft/collect/FastcraftHashMap; map
 FD: fastcraft/collect/IteratorBase/a I pos
 FD: fastcraft/collect/IteratorBase/b I removePos
+FD: fastcraft/collect/MultimapEntrySet/a Lfastcraft/collect/MapContainer; map
+FD: fastcraft/collect/MultimapIterator/a Ljava/lang/Object; currentKey
+FD: fastcraft/collect/MultimapIterator/a Ljava/util/Iterator; keyIterator
+FD: fastcraft/collect/MultimapIterator/a Lfastcraft/collect/MultimapEntrySet; set
+FD: fastcraft/collect/MultimapIterator/b Ljava/util/Iterator; valueIterator
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -63,3 +72,18 @@ MD: fastcraft/FastcraftUtil/a([B[B)[B digest
 MD: fastcraft/FastcraftUtil/a([B)Ljava/lang/String; toString
 MD: fastcraft/FastcraftUtil/a([BI[BII)V rebaseChunk
 MD: fastcraft/FastcraftUtil/a([B)[B rebaseTo85
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;)Lfastcraft/collect/MapContainer; getTransformerMap
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;)Ljava/util/Set; getMultimapEntrySet
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;)Ljava/util/Map; getMap
+MD: fastcraft/TransformerUtil/c()V init
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;Ljava/lang/Object;Z)Ljava/util/List; getList
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;Ljava/lang/Object;Ljava/lang/Object;)V put
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
+MD: fastcraft/ITransformer/a()Lnet/minecraft/world/World; removeThisMethodBecauseItIsOnlyPresentToKeepYouFromRecompiling
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V addTransformer
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addTransformer
+MD: fastcraft/TransformerUtil/e(Ljava/lang/String;)Ljava/lang/String; deobfuscateClassName
+MD: fastcraft/TransformerUtil/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateFieldName
+MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
+MD: fastcraft/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
+MD: fastcraft/TransformerUtil/a([BLfastcraft/collect/MapContainer;)[B transformClass
