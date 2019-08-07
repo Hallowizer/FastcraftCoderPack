@@ -61,5 +61,5 @@ MD: fastcraft/TransformerUtil/a(Ljava/lang/String;[B) saveTransformedClass
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/String;)[B toBytes
 MD: fastcraft/FastcraftUtil/a([B[B)[B digest
 MD: fastcraft/FastcraftUtil/a([B)Ljava/lang/String; toString
-MD: fastcraft/FastcraftUtil/a([BI[BII)V smallRemaindersBy85
-MD: fastcraft/FastcraftUtil/a([B)[B remaindersBy85
+MD: fastcraft/FastcraftUtil/a([BI[BII)V rebaseChunk
+MD: fastcraft/FastcraftUtil/a([B)[B rebaseTo85
