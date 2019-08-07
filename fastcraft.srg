@@ -18,6 +18,7 @@ CL: r fastcraft/Constants
 CL: bb fastcraft/collect/MultimapIterator
 CL: ba fastcraft/collect/MultimapEntrySet
 CL: i fastcraft/asm/ITransformer
+CL: C fastcraft/asm/MethodRedirectionTransformer
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -77,6 +78,7 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Set; getMu
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Map; getMap
 MD: fastcraft/asm/TransformerUtil/c()V init
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Z)Ljava/util/List; getList
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;)Ljava/util/List; getList
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Ljava/lang/Object;)V put
 MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
 MD: fastcraft/asm/ITransformer/a()Lnet/minecraft/world/World; removeThisMethodBecauseItIsOnlyPresentToKeepYouFromRecompiling
@@ -87,3 +89,7 @@ MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;Ljava/lang/String;Ljava/la
 MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
 MD: fastcraft/asm/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
 MD: fastcraft/asm/TransformerUtil/a([BLfastcraft/collect/Multimap;)[B transformClass
+MD: fastcraft/asm/TransformerUtil/f(Ljava/lang/String;)Ljava/lang/String; transformDesc
+MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Ljava/lang/String; base85
+MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
+MD: fastcraft/asm/TransformerUtil/a(II)Z absValuesEqual
