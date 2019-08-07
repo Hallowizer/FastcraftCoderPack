@@ -1,9 +1,9 @@
 # CL: obf deobf
 CL: b fastcraft/DummyMain
-CL: Tweaker fastcraft/FastcraftTweaker
-CL: L fastcraft/Launcher
+CL: Tweaker fastcraft/asm/FastcraftTweaker
+CL: L fastcraft/asm/Launcher
 CL: aG fastcraft/FastcraftUtil
-CL: J fastcraft/FastcraftTransformer
+CL: J fastcraft/asm/FastcraftTransformer
 CL: a fastcraft/Fastcraft
 CL: ay fastcraft/FastcraftConfig
 CL: aJ fastcraft/collect/FastcraftHashMap
@@ -12,19 +12,19 @@ CL: aM fastcraft/collect/FastcraftEntrySet
 CL: aL fastcraft/collect/EntrySetIterator
 CL: aN fastcraft/collect/KeySetIterator
 CL: aK fastcraft/collect/IteratorBase
-CL: aZ fastcraft/collect/MapContainer
-CL: B fastcraft/TransformerUtil
+CL: aZ fastcraft/collect/Multimap
+CL: B fastcraft/asm/TransformerUtil
 CL: r fastcraft/Constants
 CL: bb fastcraft/collect/MultimapIterator
 CL: ba fastcraft/collect/MultimapEntrySet
-CL: i fastcraft/ITransformer
+CL: i fastcraft/asm/ITransformer
 
 # FD: obf desc deobf
-FD: fastcraft/FastcraftTweaker/a Z run
-FD: fastcraft/Launcher/a Z run
-FD: fastcraft/FastcraftTransformer/c Z dump
-FD: fastcraft/FastcraftTransformer/b Z verify
-FD: fastcraft/FastcraftTransformer/d Z permissive
+FD: fastcraft/asm/FastcraftTweaker/a Z run
+FD: fastcraft/asm/Launcher/a Z run
+FD: fastcraft/asm/FastcraftTransformer/c Z dump
+FD: fastcraft/asm/FastcraftTransformer/b Z verify
+FD: fastcraft/asm/FastcraftTransformer/d Z permissive
 FD: fastcraft/Fastcraft/a Lorg/apache/logging/log4j/Logger; log
 FD: fastcraft/FastcraftConfig/a Ljava/lang/String; name
 FD: fastcraft/Fastcraft/a Z initialized
@@ -38,7 +38,7 @@ FD: fastcraft/collect/EntrySetIterator/b Lfastcraft/collect/FastcraftHashMap; ma
 FD: fastcraft/collect/IteratorBase/a Lfastcraft/collect/FastcraftHashMap; map
 FD: fastcraft/collect/IteratorBase/a I pos
 FD: fastcraft/collect/IteratorBase/b I removePos
-FD: fastcraft/collect/MultimapEntrySet/a Lfastcraft/collect/MapContainer; map
+FD: fastcraft/collect/MultimapEntrySet/a Lfastcraft/collect/Multimap; map
 FD: fastcraft/collect/MultimapIterator/a Ljava/lang/Object; currentKey
 FD: fastcraft/collect/MultimapIterator/a Ljava/util/Iterator; keyIterator
 FD: fastcraft/collect/MultimapIterator/a Lfastcraft/collect/MultimapEntrySet; set
@@ -66,24 +66,24 @@ MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/IteratorBase;)V nextElement
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FastcraftHashMap;I)V remove
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FastcraftHashMap;I)V alsoRemove
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/File;[B)V write
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;[B) saveTransformedClass
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;[B) saveTransformedClass
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/String;)[B toBytes
 MD: fastcraft/FastcraftUtil/a([B[B)[B digest
 MD: fastcraft/FastcraftUtil/a([B)Ljava/lang/String; toString
 MD: fastcraft/FastcraftUtil/a([BI[BII)V rebaseChunk
 MD: fastcraft/FastcraftUtil/a([B)[B rebaseTo85
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;)Lfastcraft/collect/MapContainer; getTransformerMap
-MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;)Ljava/util/Set; getMultimapEntrySet
-MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;)Ljava/util/Map; getMap
-MD: fastcraft/TransformerUtil/c()V init
-MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;Ljava/lang/Object;Z)Ljava/util/List; getList
-MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/MapContainer;Ljava/lang/Object;Ljava/lang/Object;)V put
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
-MD: fastcraft/ITransformer/a()Lnet/minecraft/world/World; removeThisMethodBecauseItIsOnlyPresentToKeepYouFromRecompiling
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V addTransformer
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addTransformer
-MD: fastcraft/TransformerUtil/e(Ljava/lang/String;)Ljava/lang/String; deobfuscateClassName
-MD: fastcraft/TransformerUtil/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateFieldName
-MD: fastcraft/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
-MD: fastcraft/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
-MD: fastcraft/TransformerUtil/a([BLfastcraft/collect/MapContainer;)[B transformClass
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lfastcraft/collect/Multimap; getTransformerMap
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Set; getMultimapEntrySet
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Map; getMap
+MD: fastcraft/asm/TransformerUtil/c()V init
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Z)Ljava/util/List; getList
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Ljava/lang/Object;)V put
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
+MD: fastcraft/asm/ITransformer/a()Lnet/minecraft/world/World; removeThisMethodBecauseItIsOnlyPresentToKeepYouFromRecompiling
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V addTransformer
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addTransformer
+MD: fastcraft/asm/TransformerUtil/e(Ljava/lang/String;)Ljava/lang/String; deobfuscateClassName
+MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateFieldName
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
+MD: fastcraft/asm/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
+MD: fastcraft/asm/TransformerUtil/a([BLfastcraft/collect/Multimap;)[B transformClass
