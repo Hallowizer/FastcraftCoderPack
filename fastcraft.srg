@@ -19,6 +19,10 @@ CL: bb fastcraft/collect/MultimapIterator
 CL: ba fastcraft/collect/MultimapEntrySet
 CL: i fastcraft/asm/ITransformer
 CL: C fastcraft/asm/MethodRedirectionTransformer
+CL: ap fastcraft/asm/StackModification
+CL: ao fastcraft/asm/ReturnInstructions
+CL: D fastcraft/asm/InvokeInsertionTransformer
+CL: E fastcraft/asm/InvokeTransformerLocation
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -44,6 +48,15 @@ FD: fastcraft/collect/MultimapIterator/a Ljava/lang/Object; currentKey
 FD: fastcraft/collect/MultimapIterator/a Ljava/util/Iterator; keyIterator
 FD: fastcraft/collect/MultimapIterator/a Lfastcraft/collect/MultimapEntrySet; set
 FD: fastcraft/collect/MultimapIterator/b Ljava/util/Iterator; valueIterator
+FD: fastcraft/asm/StackModification/a I valuesConsumed
+FD: fastcraft/asm/StackModification/b I valuesProduced
+FD: fastcraft/asm/InvokeTransformerLocation/a I end
+FD: fastcraft/asm/InvokeTransformerLocation/b I beginning
+FD: fastcraft/asm/InvokeInsertionTransformer/a Z changeReturn
+FD: fastcraft/asm/InvokeInsertionTransformer/a I mode
+FD: fastcraft/asm/InvokeInsertionTransformer/a Ljava/lang/String; targetOwner
+FD: fastcraft/asm/InvokeInsertionTransformer/b I invocationCount
+FD: fastcraft/asm/InvokeInsertionTransformer/b Ljava/lang/String; name
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -94,3 +107,11 @@ MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Ljava/lang/String; base85
 MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
 MD: fastcraft/asm/TransformerUtil/a(II)Z absValuesEqual
 MD: fastcraft/asm/ITransformer/a()V reset
+MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/AbstractInsnNode;)Lfastcraft/asm/StackModification; getStackMod
+MD: fastcraft/asm/TransformerUtil/a(I)Z isReturnInstruction
+MD: fastcraft/asm/TransformerUtil/c(Ljava/lang/String;)Ljava/lang/String; getReturnType
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnNode; getReturnInsn
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; wrapPrimitive
+MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)I getLoadInsn
+MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; unwrapPrimitive
+MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/InsnList;)Lorg/objectweb/asm/tree/InsnList; clone
