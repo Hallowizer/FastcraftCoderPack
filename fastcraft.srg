@@ -3,7 +3,7 @@ CL: b fastcraft/DummyMain
 CL: Tweaker fastcraft/asm/FastcraftTweaker
 CL: L fastcraft/asm/Launcher
 CL: aG fastcraft/FastcraftUtil
-CL: J fastcraft/asm/FastcraftTransformer
+CL: J fastcraft/asm/transformers/ParentTransformer
 CL: a fastcraft/Fastcraft
 CL: ay fastcraft/FastcraftConfig
 CL: aJ fastcraft/collect/FastcraftHashMap
@@ -13,23 +13,23 @@ CL: aL fastcraft/collect/EntrySetIterator
 CL: aN fastcraft/collect/KeySetIterator
 CL: aK fastcraft/collect/IteratorBase
 CL: aZ fastcraft/collect/Multimap
-CL: B fastcraft/asm/TransformerUtil
+CL: B fastcraft/asm/transformers/TransformerManager
 CL: r fastcraft/Constants
 CL: bb fastcraft/collect/MultimapIterator
 CL: ba fastcraft/collect/MultimapEntrySet
-CL: i fastcraft/asm/ITransformer
-CL: C fastcraft/asm/MethodRedirectionTransformer
+CL: i fastcraft/asm/transformers/ITransformer
+CL: C fastcraft/asm/transformers/MethodRedirectionTransformer
 CL: ap fastcraft/asm/StackModification
 CL: ao fastcraft/asm/ReturnInstructions
-CL: D fastcraft/asm/InvokeInsertionTransformer
+CL: D fastcraft/asm/transformers/InvokeInsertionTransformer
 CL: E fastcraft/asm/InvokeTransformerLocation
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
 FD: fastcraft/asm/Launcher/a Z run
-FD: fastcraft/asm/FastcraftTransformer/c Z dump
-FD: fastcraft/asm/FastcraftTransformer/b Z verify
-FD: fastcraft/asm/FastcraftTransformer/d Z permissive
+FD: fastcraft/asm/transformers/FastcraftTransformer/c Z dump
+FD: fastcraft/asm/transformers/FastcraftTransformer/b Z verify
+FD: fastcraft/asm/transformers/FastcraftTransformer/d Z permissive
 FD: fastcraft/Fastcraft/a Lorg/apache/logging/log4j/Logger; log
 FD: fastcraft/FastcraftConfig/a Ljava/lang/String; name
 FD: fastcraft/Fastcraft/a Z initialized
@@ -52,11 +52,11 @@ FD: fastcraft/asm/StackModification/a I valuesConsumed
 FD: fastcraft/asm/StackModification/b I valuesProduced
 FD: fastcraft/asm/InvokeTransformerLocation/a I end
 FD: fastcraft/asm/InvokeTransformerLocation/b I beginning
-FD: fastcraft/asm/InvokeInsertionTransformer/a Z changeReturn
-FD: fastcraft/asm/InvokeInsertionTransformer/a I mode
-FD: fastcraft/asm/InvokeInsertionTransformer/a Ljava/lang/String; targetOwner
-FD: fastcraft/asm/InvokeInsertionTransformer/b I invocationCount
-FD: fastcraft/asm/InvokeInsertionTransformer/b Ljava/lang/String; name
+FD: fastcraft/asm/transformers/InvokeInsertionTransformer/a Z changeReturn
+FD: fastcraft/asm/transformers/InvokeInsertionTransformer/a I mode
+FD: fastcraft/asm/transformers/InvokeInsertionTransformer/a Ljava/lang/String; targetOwner
+FD: fastcraft/asm/transformers/InvokeInsertionTransformer/b I invocationCount
+FD: fastcraft/asm/transformers/InvokeInsertionTransformer/b Ljava/lang/String; name
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -80,38 +80,38 @@ MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/IteratorBase;)V nextElement
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FastcraftHashMap;I)V remove
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FastcraftHashMap;I)V alsoRemove
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/File;[B)V write
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;[B) saveTransformedClass
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;[B) saveTransformedClass
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/String;)[B toBytes
 MD: fastcraft/FastcraftUtil/a([B[B)[B digest
 MD: fastcraft/FastcraftUtil/a([B)Ljava/lang/String; toString
 MD: fastcraft/FastcraftUtil/a([BI[BII)V rebaseChunk
 MD: fastcraft/FastcraftUtil/a([B)[B rebaseTo85
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lfastcraft/collect/Multimap; getTransformerMap
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)Lfastcraft/collect/Multimap; getTransformerMap
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Set; getMultimapEntrySet
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;)Ljava/util/Map; getMap
-MD: fastcraft/asm/TransformerUtil/c()V init
+MD: fastcraft/asm/transformers/TransformerManager/c()V init
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Z)Ljava/util/List; getList
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;)Ljava/util/List; getList
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/Multimap;Ljava/lang/Object;Ljava/lang/Object;)V put
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang/String;Lfastcraft/ITransformer;)V addTransformer
 MD: fastcraft/asm/ITransformer/a()Lnet/minecraft/world/World; removeThisMethodBecauseItIsOnlyPresentToKeepYouFromRecompiling
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V addTransformer
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addTransformer
-MD: fastcraft/asm/TransformerUtil/e(Ljava/lang/String;)Ljava/lang/String; deobfuscateClassName
-MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateFieldName
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
-MD: fastcraft/asm/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
-MD: fastcraft/asm/TransformerUtil/a([BLfastcraft/collect/Multimap;)[B transformClass
-MD: fastcraft/asm/TransformerUtil/f(Ljava/lang/String;)Ljava/lang/String; transformDesc
-MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Ljava/lang/String; base85
-MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
-MD: fastcraft/asm/TransformerUtil/a(II)Z absValuesEqual
-MD: fastcraft/asm/ITransformer/a()V reset
-MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/AbstractInsnNode;)Lfastcraft/asm/StackModification; getStackMod
-MD: fastcraft/asm/TransformerUtil/a(I)Z isReturnInstruction
-MD: fastcraft/asm/TransformerUtil/c(Ljava/lang/String;)Ljava/lang/String; getReturnType
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnNode; getReturnInsn
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; wrapPrimitive
-MD: fastcraft/asm/TransformerUtil/a(Ljava/lang/String;)I getLoadInsn
-MD: fastcraft/asm/TransformerUtil/b(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; unwrapPrimitive
-MD: fastcraft/asm/TransformerUtil/a(Lorg/objectweb/asm/tree/InsnList;)Lorg/objectweb/asm/tree/InsnList; clone
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V addTransformer
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addTransformer
+MD: fastcraft/asm/transformers/TransformerManager/e(Ljava/lang/String;)Ljava/lang/String; deobfuscateClassName
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateFieldName
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; deobfuscateMethodName
+MD: fastcraft/asm/transformers/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
+MD: fastcraft/asm/transformers/TransformerManager/a([BLfastcraft/collect/Multimap;)[B transformClass
+MD: fastcraft/asm/transformers/TransformerManager/f(Ljava/lang/String;)Ljava/lang/String; transformDesc
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Ljava/lang/String; base85
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
+MD: fastcraft/asm/transformers/TransformerManager/a(II)Z absValuesEqual
+MD: fastcraft/asm/transformers/ITransformer/a()V resetRunCount
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/AbstractInsnNode;)Lfastcraft/asm/StackModification; getStackMod
+MD: fastcraft/asm/transformers/TransformerManager/a(I)Z isReturnInstruction
+MD: fastcraft/asm/transformers/TransformerManager/c(Ljava/lang/String;)Ljava/lang/String; getReturnType
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnNode; getReturnInsn
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; wrapPrimitive
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)I getLoadInsn
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; unwrapPrimitive
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/InsnList;)Lorg/objectweb/asm/tree/InsnList; clone
