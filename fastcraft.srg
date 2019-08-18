@@ -28,6 +28,8 @@ CL: H fastcraft/CommonTweaks
 CL: HC fastcraft/ClientTweaks
 CL: X fastcraft/collect/FastLongHashMap
 CL: aV fastcraft/collect/FlhmImpl
+CL: V fastcraft/collect/FastIntHashMap
+CL: aR fastcraft/collect/FihmImpl
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -79,6 +81,10 @@ FD: fastcraft/collect/FastLongHashMap/a Ljava/lang/Object; cachedValue
 FD: fastcraft/collect/FastLongHashMap/a Ljava/util/concurrent/locks/ReentrantReadWriteLock; lock
 FD: fastcraft/collect/FlhmImpl/a [J keys
 FD: fastcraft/collect/FlhmImpl/a [Ljava/lang/Object; values
+FD: fastcraft/collect/FastLongHashMap/a Lfastcraft/collect/FlhmImpl; impl
+FD: fastcraft/collect/FastIntHashMap/a Lfastcraft/collect/FihmImpl; impl
+FD: fastcraft/collect/FihmImpl/a [I keys
+FD: fastcraft/collect/FihmImpl/a [Ljava/lang/Object; values
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -145,3 +151,11 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FlhmImpl;J)I getIndex
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FlhmImpl;JLjava/lang/Object;)Ljava/lang/Object; putValue
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FlhmImpl;J)Ljava/lang/Object; removeValue
 MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FlhmImpl;I)Ljava/lang/Object; removeValue
+MD: fastcraft/CommonTweaks/u()Lnet/minecraft/util/IntHashMap; createIntHashMap
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FihmImpl;I)Ljava/lang/Object; getValue
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FihmImpl;I)I getIndex
+MD: fastcraft/FastcraftUtil/e(I)I improveForm
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FihmImpl;I)Z containsKey
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FihmImpl;ILjava/lang/Object;)Ljava/lang/Object; putValue
+MD: fastcraft/FastcraftUtil/c(Lfastcraft/collect/FihmImpl;I)Ljava/lang/Object; removeValue
+MD: fastcraft/FastcraftUtil/d(Lfastcraft/collect/FihmImpl;I)Ljava/lang/Object; removeValue0
