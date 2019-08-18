@@ -23,13 +23,14 @@ CL: ap fastcraft/asm/StackModification
 CL: ao fastcraft/asm/ReturnInstructions
 CL: D fastcraft/asm/transformers/InvokeInsertionTransformer
 CL: E fastcraft/asm/InvokeTransformerLocation
+CL: I fastcraft/asm/transformers/ConstructorRedirectionTransformer
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
 FD: fastcraft/asm/Launcher/a Z run
-FD: fastcraft/asm/transformers/FastcraftTransformer/c Z dump
-FD: fastcraft/asm/transformers/FastcraftTransformer/b Z verify
-FD: fastcraft/asm/transformers/FastcraftTransformer/d Z permissive
+FD: fastcraft/asm/transformers/ParentTransformer/c Z dump
+FD: fastcraft/asm/transformers/ParentTransformer/b Z verify
+FD: fastcraft/asm/transformers/ParentTransformer/d Z permissive
 FD: fastcraft/Fastcraft/a Lorg/apache/logging/log4j/Logger; log
 FD: fastcraft/FastcraftConfig/a Ljava/lang/String; name
 FD: fastcraft/Fastcraft/a Z initialized
@@ -62,6 +63,10 @@ FD: fastcraft/asm/transformers/MethodRedirectionTransformer/a Z passThis
 FD: fastcraft/asm/transformers/MethodRedirectionTransformer/b I runCount
 FD: fastcraft/asm/transformers/MethodRedirectionTransformer/a Ljava/lang/String; owner
 FD: fastcraft/asm/transformers/MethodRedirectionTransformer/b Ljava/lang/String; name
+FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/c Ljava/lang/String; owner
+FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/b Ljava/lang/String; name
+FD: fastcraft/asm/transformers/ConstructionRedirectionTransformer/b I runCount
+FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/d Ljava/lang/String; desc
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -108,7 +113,7 @@ MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang
 MD: fastcraft/asm/transformers/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;Lorg/objectweb/asm/tree/MethodNode;)Z transform
 MD: fastcraft/asm/transformers/TransformerManager/a([BLfastcraft/collect/Multimap;)[B transformClass
 MD: fastcraft/asm/transformers/TransformerManager/f(Ljava/lang/String;)Ljava/lang/String; transformDesc
-MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Ljava/lang/String; base85
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Ljava/lang/String; saltedHash
 MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
 MD: fastcraft/asm/transformers/TransformerManager/a(II)Z absValuesEqual
 MD: fastcraft/asm/transformers/ITransformer/a()V resetRunCount
