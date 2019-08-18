@@ -24,6 +24,10 @@ CL: ao fastcraft/asm/ReturnInstructions
 CL: D fastcraft/asm/transformers/InvokeInsertionTransformer
 CL: E fastcraft/asm/InvokeTransformerLocation
 CL: I fastcraft/asm/transformers/ConstructorRedirectionTransformer
+CL: H fastcraft/CommonTweaks
+CL: HC fastcraft/ClientTweaks
+CL: X fastcraft/collect/FastLongHashMap
+CL: aV fastcraft/collect/FlhmImpl
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -67,6 +71,14 @@ FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/c Ljava/lang/St
 FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/b Ljava/lang/String; name
 FD: fastcraft/asm/transformers/ConstructionRedirectionTransformer/b I runCount
 FD: fastcraft/asm/transformers/ConstructorRedirectionTransformer/d Ljava/lang/String; desc
+FD: fastcraft/collect/FastLongHashMap/a Z sync
+FD: fastcraft/collect/FastLongHashMap/b Z debug
+FD: fastcraft/collect/FastLongHashMap/c Z cache
+FD: fastcraft/collect/FastLongHashMap/a J cachedKey
+FD: fastcraft/collect/FastLongHashMap/a Ljava/lang/Object; cachedValue
+FD: fastcraft/collect/FastLongHashMap/a Ljava/util/concurrent/locks/ReentrantReadWriteLock; lock
+FD: fastcraft/collect/FlhmImpl/a [J keys
+FD: fastcraft/collect/FlhmImpl/a [Ljava/lang/Object; values
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -126,3 +138,10 @@ MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)I getLoad
 MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; unwrapPrimitive
 MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/InsnList;)Lorg/objectweb/asm/tree/InsnList; clone
 MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V addConstructorRedirection
+MD: fastcraft/asm/transformers/CommonTweaks/e()Lnet/minecraft/util/LongHashMap; createLongHashMap
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FlhmImpl;J)Ljava/lang/Object; getValue
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FlhmImpl;J)I getIndex
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FlhmImpl;JLjava/lang/Object;)Ljava/lang/Object; putValue
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FlhmImpl;J)Ljava/lang/Object; removeValue
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/collect/FlhmImpl;I)Ljava/lang/Object; removeValue
