@@ -57,6 +57,11 @@ FD: fastcraft/asm/transformers/InvokeInsertionTransformer/a I mode
 FD: fastcraft/asm/transformers/InvokeInsertionTransformer/a Ljava/lang/String; targetOwner
 FD: fastcraft/asm/transformers/InvokeInsertionTransformer/b I invocationCount
 FD: fastcraft/asm/transformers/InvokeInsertionTransformer/b Ljava/lang/String; name
+FD: fastcraft/asm/transformers/MethodRedirectionTransformer/c Ljava/lang/String; target
+FD: fastcraft/asm/transformers/MethodRedirectionTransformer/a Z passThis
+FD: fastcraft/asm/transformers/MethodRedirectionTransformer/b I runCount
+FD: fastcraft/asm/transformers/MethodRedirectionTransformer/a Ljava/lang/String; owner
+FD: fastcraft/asm/transformers/MethodRedirectionTransformer/b Ljava/lang/String; name
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -115,3 +120,4 @@ MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)Lorg/obje
 MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;)I getLoadInsn
 MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;)Lorg/objectweb/asm/tree/InsnList; unwrapPrimitive
 MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/InsnList;)Lorg/objectweb/asm/tree/InsnList; clone
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/MethodInsnNode;Ljava/lang/String;Ljava/lang/String;)V redirectMethodCall
