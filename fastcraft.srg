@@ -108,6 +108,8 @@ FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/util/Set; operations
 FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/lang/String; target
 FD: fastcraft/asm/transformers/AccessTransformer/a I runCount
 FD: fastcraft/asm/transformers/AccessTransformerOperationMappings/a [I mappings
+FD: fastcraft/asm/transformers/TransformerManager/a Z isDeobf
+FD: fastcraft/asm/transformers/TransformerManager/b Z checkedDeobf
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -192,3 +194,4 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;)Lfas
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;Ljava/lang/String;)Lfastcraft/ConfigOption; getOption
 MD: fastcraft/FastcraftUtil/b(Ljava/lang/String;)Ljava/lang/String; escapeString
 MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V addAccessTransformer
+MD: fastcraft/asm/transformers/TransformerManager/c()Z isDeobfEnvironment
