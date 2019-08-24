@@ -191,3 +191,4 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/util/List;IZ)Lfas
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;)Lfastcraft/FastcraftConfig; getChild
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;Ljava/lang/String;)Lfastcraft/ConfigOption; getOption
 MD: fastcraft/FastcraftUtil/b(Ljava/lang/String;)Ljava/lang/String; escapeString
+MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V addAccessTransformer
