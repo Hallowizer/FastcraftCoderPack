@@ -204,5 +204,5 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;Ljava
 MD: fastcraft/FastcraftUtil/b(Ljava/lang/String;)Ljava/lang/String; escapeString
 MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V addAccessTransformer
 MD: fastcraft/asm/transformers/TransformerManager/c()Z isDeobfEnvironment
-MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/ClassNode;)Ljava/lang/String; getStackEntriesAdded
-MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/ClassNode;)Lorg/objectweb/asm/tree/InsnList; getInsnsAdded
+MD: fastcraft/asm/transformers/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;)Ljava/lang/String; getStackEntriesAdded
+MD: fastcraft/asm/transformers/ITransformer/a(Lorg/objectweb/asm/tree/ClassNode;)Lorg/objectweb/asm/tree/InsnList; getInsnsAdded
