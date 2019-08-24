@@ -38,6 +38,7 @@ CL: K fastcraft/asm/transformers/RenderDistanceTransformer
 CL: x fastcraft/asm/transformers/AccessTransformer
 CL: v fastcraft/asm/AccessTransformerOperation
 CL: y fastcraft/asm/AccessTransformerOperationMappings
+CL: F fastcraft/asm/transformers/CodeBlockReplacementTransformer
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -110,6 +111,14 @@ FD: fastcraft/asm/transformers/AccessTransformer/a I runCount
 FD: fastcraft/asm/transformers/AccessTransformerOperationMappings/a [I mappings
 FD: fastcraft/asm/transformers/TransformerManager/a Z isDeobf
 FD: fastcraft/asm/transformers/TransformerManager/b Z checkedDeobf
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/a Ljava/lang/String; targetOwner
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransfomrer/b Ljava/lang/String; targetName
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/a I startOffset
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/c I endOffset
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/b I runCount
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/a Lorg/objectweb/asm/tree/AbstractInsnNode; startInsnHash
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/b Lorg/objectweb/asm/tree/AbstractInsnNode; endInsnHash
+FD: fastcraft/asm/transformers/CodeBlockReplacementTransformer/a [Lfastcraft/asm/transformers/ITransformer; codeProviders
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -195,3 +204,5 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;Ljava
 MD: fastcraft/FastcraftUtil/b(Ljava/lang/String;)Ljava/lang/String; escapeString
 MD: fastcraft/asm/transformers/TransformerManager/b(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V addAccessTransformer
 MD: fastcraft/asm/transformers/TransformerManager/c()Z isDeobfEnvironment
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/ClassNode;)Ljava/lang/String; getStackEntriesAdded
+MD: fastcraft/asm/transformers/TransformerManager/a(Lorg/objectweb/asm/tree/ClassNode;)Lorg/objectweb/asm/tree/InsnList; getInsnsAdded
