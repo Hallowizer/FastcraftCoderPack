@@ -30,6 +30,13 @@ CL: X fastcraft/collect/FastLongHashMap
 CL: aV fastcraft/collect/FlhmImpl
 CL: V fastcraft/collect/FastIntHashMap
 CL: aR fastcraft/collect/FihmImpl
+CL: w fastcraft/asm/transformers/FieldInsertionTransformer
+CL: aB fastcraft/ConfigOption
+CL: aA fastcraft/ConfigFormatException
+CL: M fastcraft/asm/TransformerInitState
+CL: K fastcraft/asm/transformers/RenderDistanceTransformer
+CL: x fastcraft/asm/transformers/AccessTransformer
+CL: v fastcraft/asm/AccessTransformerOperation
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -85,6 +92,20 @@ FD: fastcraft/collect/FastLongHashMap/a Lfastcraft/collect/FlhmImpl; impl
 FD: fastcraft/collect/FastIntHashMap/a Lfastcraft/collect/FihmImpl; impl
 FD: fastcraft/collect/FihmImpl/a [I keys
 FD: fastcraft/collect/FihmImpl/a [Ljava/lang/Object; values
+FD: fastcraft/asm/transformers/FieldInsertionTransformer/a Ljava/lang/String; name
+FD: fastcraft/asm/transformers/FieldInsertionTransformer/b Ljava/lang/String; desc
+FD: fastcraft/FastcraftConfig/b Ljava/util/List; children
+FD: fastcraft/asm/transformers/RenderDistanceTransformer/a I runCount
+FD: fastcraft/asm/AccessTransformerOperation/a [Lfastcraft/asm/AccessTransformerOperation; entries
+FD: fastcraft/asm/AccessTransformerOperation/a Lfastcraft/asm/AccessTransformerOperation; ADD_FINAL
+FD: fastcraft/asm/AccessTransformerOperation/b Lfastcraft/asm/AccessTransformerOperation; PRIVATE
+FD: fastcraft/asm/AccessTransformerOperation/c Lfastcraft/asm/AccessTransformerOperation; PUBLIC
+FD: fastcraft/asm/AccessTransformerOperation/d Lfastcraft/asm/AccessTransformerOperation; DEFAULT
+FD: fastcraft/asm/AccessTransformerOperation/e Lfastcraft/asm/AccessTransformerOperation; PROTECTED
+FD: fastcraft/asm/AccessTransformerOperation/f Lfastcraft/asm/AccessTransformerOperation; REMOVE_FINAL
+FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/util/Set; operations
+FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/lang/String; target
+FD: fastcraft/asm/transformers/AccessTransformer/a I runCount
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
@@ -92,7 +113,9 @@ MD: fastcraft/FastcraftUtil/a(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Obje
 MD: fastcraft/Fastcraft/a()Lorg/apache/logging/log4j/Logger; getLogger
 MD: fastcraft/Fastcraft/b()V init
 MD: fastcraft/Fastcraft/b()Lfastcraft/FastcraftConfig; loadConfig
-MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/File;)V saveConfig
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/io/File;)V loadConfig
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/io/InputStream;)V loadConfig
+MD: fastcraft/FastcraftUtil/b(Lfastcraft/FastcraftConfig;Ljava/io/File;)V saveConfig
 MD: fastcraft/Fastcraft/a()V assertInitialized
 MD: fastcraft/Fastcraft/a(Ljava/lang/Runnable;)Ljava/util/concurrent/Future; submitTask
 MD: fastcraft/FastcraftUtil/a(Ljava/lang/Object;)Ljava/lang/Object; clearObject
@@ -159,3 +182,10 @@ MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FihmImpl;I)Z containsKey
 MD: fastcraft/FastcraftUtil/a(Lfastcraft/collect/FihmImpl;ILjava/lang/Object;)Ljava/lang/Object; putValue
 MD: fastcraft/FastcraftUtil/c(Lfastcraft/collect/FihmImpl;I)Ljava/lang/Object; removeValue
 MD: fastcraft/FastcraftUtil/d(Lfastcraft/collect/FihmImpl;I)Ljava/lang/Object; removeValue0
+MD: fastcraft/asm/transformers/TransformerManager/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V addFieldInsertion
+MD: fastcraft/Fastcraft/a()Lfastcraft/FastcraftConfig; getConfig
+MD: fastcraft/FastcraftUtil/a(Ljava/lang/String;)Ljava/util/List; breakQuotedPath
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/util/List;IZ)Lfastcraft/FastcraftConfig; getChild
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;)Lfastcraft/FastcraftConfig; getChild
+MD: fastcraft/FastcraftUtil/a(Lfastcraft/FastcraftConfig;Ljava/lang/String;Ljava/lang/String;)Lfastcraft/ConfigOption; getOption
+MD: fastcraft/FastcraftUtil/b(Ljava/lang/String;)Ljava/lang/String; escapeString
