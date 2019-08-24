@@ -37,6 +37,7 @@ CL: M fastcraft/asm/TransformerInitState
 CL: K fastcraft/asm/transformers/RenderDistanceTransformer
 CL: x fastcraft/asm/transformers/AccessTransformer
 CL: v fastcraft/asm/AccessTransformerOperation
+CL: y fastcraft/asm/AccessTransformerOperationMappings
 
 # FD: obf desc deobf
 FD: fastcraft/asm/FastcraftTweaker/a Z run
@@ -106,6 +107,7 @@ FD: fastcraft/asm/AccessTransformerOperation/f Lfastcraft/asm/AccessTransformerO
 FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/util/Set; operations
 FD: fastcraft/asm/transformers/AccessTransformer/a Ljava/lang/String; target
 FD: fastcraft/asm/transformers/AccessTransformer/a I runCount
+FD: fastcraft/asm/transformers/AccessTransformerOperationMappings/a [I mappings
 
 # MD: obfnameanddesc deobf
 MD: fastcraft/DummyMain/a(Lcpw/mods/fml/event/FMLPreInitializationEvent;)V preInit
